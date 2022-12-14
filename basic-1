@@ -1,0 +1,6 @@
+-- command to create the database
+create database BigDataBootcamp;
+-- to list down all the databases
+show databases;
+-- command to drop databases
+drop database school;
