@@ -12,17 +12,20 @@ What is database ?
  smallest unit of execution is known as transaction
  vertically scalable, consistent, store data in structured form or tabular form or relational form, highly available
  transactional database follows ACID properties:
- 1. Atomicity:
- 2. Consistency:
- 3. Isolation:
- 4. Durability:
+ 1. Atomicity: The entire transaction take place at once or doesn't happen at all.
+ 2. Consistency: The database must be consistent before and after the transaction 
+ 3. Isolation: Multiple transaction occur independently without interference.
+ 4. Durability: The changes of successful transaction occurs even if the system failure occurs.
  
  consistency: means if 2 or 3 users wants to fetch data from a database they will get the same result.
+ 
+ Isolation:Each transaction will execute without impacting each other
  
  NoSql database:
  Horizonatally scalable, distributed, 
  store data in different form: key-value,columner,graph,document
  not always consistent
  highly available if no master slave architecture
+ 
  
  
