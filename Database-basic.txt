@@ -1,6 +1,28 @@
--- command to create the database
-create database BigDataBootcamp;
--- to list down all the databases
-show databases;
--- command to drop databases
-drop database school;
+What is database ?
+ central system where data will be stored in some logical related manner.
+ 
+ software application: MySql,PstgreSql,Oracle
+ software application helps us to store and manipulate the data.
+ 
+ Types of databases:
+ 1. Transactional (RDBMS):MySql,PstgreSql,Oracle
+ 2. NoSql(Not only Sql): HBase,Cassandra, MongoDB
+ 
+ Transactional databases:
+ smallest unit of execution is known as transaction
+ vertically scalable, consistent, store data in structured form or tabular form or relational form, highly available
+ transactional database follows ACID properties:
+ 1. Atomicity:
+ 2. Consistency:
+ 3. Isolation:
+ 4. Durability:
+ 
+ consistency: means if 2 or 3 users wants to fetch data from a database they will get the same result.
+ 
+ NoSql database:
+ Horizonatally scalable, distributed, 
+ store data in different form: key-value,columner,graph,document
+ not always consistent
+ highly available if no master slave architecture
+ 
+ 
