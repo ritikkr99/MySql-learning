@@ -51,6 +51,8 @@ insert into employee values(5,'Amit', 25, '2021-08-11', 12000, 'Noida');
 
 insert into employee values(1,'Puneet', 26, '2021-08-12', 50000, 'Gurgaon');
 
+insert into employee values(1,'Basant', 26, '2021-08-13', 40000, 'Noida');
+
 --- add unique integrity constraint on id COLUMN
 
 alter table employee add constraint id_unique UNIQUE(id);
