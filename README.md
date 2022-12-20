@@ -1,2 +1,2 @@
 # MySql-learning
-pdf files are handwitten notes, you have to download file first 
+pdf files are handwitten notes, you have to download file first to read it.
