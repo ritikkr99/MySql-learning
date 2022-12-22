@@ -1,1 +1,92 @@
 
+create database test;
+
+use test;
+
+create table orders_data
+(
+ cust_id int,
+ order_id int,
+ country varchar(50),
+ state varchar(50)
+);
+
+insert into orders_data values(1,100,'USA','Seattle');
+insert into orders_data values(2,101,'INDIA','UP');
+insert into orders_data values(2,103,'INDIA','Bihar');
+insert into orders_data values(4,108,'USA','WDC');
+insert into orders_data values(5,109,'UK','London');
+insert into orders_data values(4,110,'USA','WDC');
+insert into orders_data values(3,120,'INDIA','AP');
+insert into orders_data values(2,121,'INDIA','Goa');
+insert into orders_data values(1,131,'USA','Seattle');
+insert into orders_data values(6,142,'USA','Seattle');
+insert into orders_data values(7,150,'USA','Seattle');
+
+select * from orders_data;
+
+# Use of Having Clause
+# Write a query to find the country where only 1 order was placed
+select country from orders_data group by country having count(*)=1;
+
+# Where Clause and Group By Clause --> What should be the proper sequence??
+# Answer -> Where Clause and then Group By ??
+
+# How to use GROUP_CONCAT
+# Query - Write a query to print distinct states present in the dataset for each country?
+select country, GROUP_CONCAT(state) as states_in_country from orders_data group by country;
+
+select country, GROUP_CONCAT(distinct state) as states_in_country from orders_data group by country;
+
+select country, GROUP_CONCAT(distinct state order by state desc) as states_in_country from orders_data group by country;
+
+select country, GROUP_CONCAT(distinct state order by state desc separator '<->') as states_in_country from orders_data group by country;
+
+# Subqueries in SQL
+create table employees
+(
+    id int,
+    name varchar(50),
+    salary int
+);
+
+insert into employees values(1,'Shashank',5000),(2,'Amit',5500),(3,'Rahul',7000),(4,'Rohit',6000),(5,'Nitin',4000),(6,'Sunny',7500);
+
+select * from employees;
+
+# Write a query to print all those employee records who are getting more salary than 'Rohit'
+
+# Wrong solution -> select * from employees where salary > 6000; 
+select * from employees where salary > (select salary from employees where name='Rohit');
+
+# Use of IN and NOT IN
+# Write a query to print all orders which were placed in 'Seattle' or 'Goa'
+select * from orders_data;
+
+SELECT * FROM orders_data WHERE state in ('Seattle', 'Goa');
+
+create table customer_order_data
+(
+    order_id int,
+    cust_id int,
+    supplier_id int,
+    cust_country varchar(50)
+);
+
+
+# Case When in SQL
+Create table student_marks
+(
+    stu_id int,
+    stu_name varchar(50),
+    total_marks int
+);
+
+insert into student_marks values(1,'Shashank',50);
+insert into student_marks values(2,'Rahul',91);
+insert into student_marks values(3,'Amit',74);
+insert into student_marks values(4,'Nikhil',65);
+insert into student_marks values(5,'Rohit',86);
+insert into student_marks values(6,'Deepak',77);
+
+select * from student_marks;
