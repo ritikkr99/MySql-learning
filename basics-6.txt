@@ -132,3 +132,9 @@ create table amazon_employees(
     insert into department values(101, 'HR');
       insert into department values(102, 'IT');
         insert into department values(103, 'Finance');
+
+--- Write a query to print the name of department along with the total salary paid in each department
+--- Normal approach
+select d.dept_name, tmp.total_salary
+from (select dept_id , sum(salary) as total_salary from amazon_employees group by dept_id) tmp
+inner join department d on tmp.dept_id = d.dept_id;
