@@ -147,3 +147,37 @@ from dept_wise_salary tmp
 inner join department d on tmp.dept_id = d.dept_id;
 
 select * from dept_wise_salary;
+
+--- Write a Query to generate numbers from 1 to 10 in SQL
+
+with recursive generate_numbers as   
+(
+  select 1 as n
+  union 
+  select n+1 from generate_numbers where n<10
+) 
+
+select * from generate_numbers;
+
+
+create table emp_mgr
+(
+id int,
+name varchar(50),
+manager_id int,
+designation varchar(50),
+primary key (id)
+);
+
+
+insert into emp_mgr values(1,'Shripath',null,'CEO');
+insert into emp_mgr values(2,'Satya',5,'SDE');
+insert into emp_mgr values(3,'Jia',5,'DA');
+insert into emp_mgr values(4,'David',5,'DS');
+insert into emp_mgr values(5,'Michael',7,'Manager');
+insert into emp_mgr values(6,'Arvind',7,'Architect');
+insert into emp_mgr values(7,'Asha',1,'CTO');
+insert into emp_mgr values(8,'Maryam',1,'Manager');
+
+
+select * from emp_mgr;
