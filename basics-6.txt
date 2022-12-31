@@ -181,3 +181,24 @@ insert into emp_mgr values(8,'Maryam',1,'Manager');
 
 
 select * from emp_mgr;
+
+--- for our CTO 'Asha', present her org chart
+
+with recursive emp_hir as  
+(
+   select id, name, manager_id, designation from emp_mgr where name='Asha'
+   UNION
+   select em.id, em.name, em.manager_id, em.designation from emp_hir eh inner join emp_mgr em on eh.id = em.manager_id
+)
+
+select * from emp_hir;
+
+--- Print level of employees as well
+with recursive emp_hir as  
+(
+   select id, name, manager_id, designation, 1 as lvl from emp_mgr where name='Asha'
+   UNION
+   select em.id, em.name, em.manager_id, em.designation, eh.lvl + 1 as lvl from emp_hir eh inner join emp_mgr em on eh.id = em.manager_id
+)
+
+select * from emp_hir;
