@@ -4,3 +4,4 @@ Means creating smaller chunks
 with group by clause we can perform aggregate functions
 example:- count,max,min,sum,avg
 
+apart from group by columns, we can use other columns in aggregate function, They can't be use in select statement
