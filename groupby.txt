@@ -1,2 +1,6 @@
-# Group By:-
+Group By:-
 Means creating smaller chunks
+
+with group by clause we can perform aggregate functions
+example:- count,max,min,sum,avg
+
